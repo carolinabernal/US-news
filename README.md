@@ -18,15 +18,15 @@ For this project we use two main pieces of information:
 1. Identify major local newspapers per state
 You can get information about local newspapers in the U.S. in the following websites:
 
-(https://www.mediamiser.com/resources/top-media-outlets/top-10-arizona-daily-newspapers-by-circulation/)
-(http://www.cision.com/us/2010/05/top-10-daily-massachusetts-newspapers/)
+https://www.mediamiser.com/resources/top-media-outlets/top-10-arizona-daily-newspapers-by-circulation/
+http://www.cision.com/us/2010/05/top-10-daily-massachusetts-newspapers/
 
-We choose two newspapers for each state in the United States--except Alaska, Hawaii and District of Columbia.
-Then we search for the twitter accounts of those newspapers in their websites.
+  We choose two newspapers for each state in the United States--except Alaska, Hawaii and District of Columbia.
+  Then we search for the twitter accounts of those newspapers in their websites.
 
-The complete list of the newspapers that we analyze in this project and their twitter accounts can be found on the file called "Twitter_accounts.csv".
+  The complete list of the newspapers that we analyze in this project and their twitter accounts can be found on the file called "Twitter_accounts.csv".
 
-2. Tweets of local newspapers
+2.Tweets of local newspapers
 We used the [Twitter Search API](https://dev.twitter.com/rest/public/search) to get the tweets about specific topics on the days that we selected. This API is part of Twitter’s REST API, which allow us to read and write Twitter data in JSON format.
 
 NOTE: We decided to use the Twitter Search API instead of the Streaming API in order to be able to conduct specific searches.
@@ -64,7 +64,7 @@ In general, our code contains the following elements:
 
     In our case, we are filtering the tweets that contain a link to an article of each newspaper.
 
-  * We downloaded the responses in JSON format and then generated a code to count the number of tweets (we excluded retweets) per newspaper and write it on a csv file. This code can be found in the repository under the name of "counter.py"
+4. We downloaded the responses in JSON format and then generated a code to count the number of tweets (we excluded retweets) per newspaper and write it on a csv file. This code can be found in the repository under the name of "counter.py"
 
 
 #### Some challenges with the data
