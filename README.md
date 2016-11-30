@@ -17,8 +17,9 @@ For this project we use two main pieces of information:
 
 1. Identify major local newspapers per state
 You can get information about local newspapers in the U.S. in the following websites:
-https://www.mediamiser.com/resources/top-media-outlets/top-10-arizona-daily-newspapers-by-circulation/
-http://www.cision.com/us/2010/05/top-10-daily-massachusetts-newspapers/
+
+(https://www.mediamiser.com/resources/top-media-outlets/top-10-arizona-daily-newspapers-by-circulation/)
+(http://www.cision.com/us/2010/05/top-10-daily-massachusetts-newspapers/)
 
 We choose two newspapers for each state in the United States--except Alaska, Hawaii and District of Columbia.
 Then we search for the twitter accounts of those newspapers in their websites.
