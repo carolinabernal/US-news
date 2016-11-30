@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Years Template</title>
+
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,500,400,300,200,100,400italic0&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'>
+
+<style>
+* { font-family: "Open+Sans", Arial}
+body {margin: 0% 10%;}
+ul.nav {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  background-color: lightgrey;
+}
+ul.nav li { float: left; }
+ul.nav li a {
+  display: inline-block;
+  color: grey;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+ul.nav li a.active {
+  color: grey;
+  background-color: #555;
+  font-weight: bold;
+}
+ul.nav li:hover {
+  background-color: #555;
+  transition: 0.5s;
+}
+h1 {
+  color: grey;
+}
+h2 {
+  color: navy;
+}
+h3 {
+  color: grey;
+  text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+
+{% block Trump_ex %}{% endblock %}
+{% block Hillary_ex %}{% endblock %}
+{% block marihuana_ex %}{% endblock %}
+{% block Cuba_ex %}{% endblock %}
+
+</body>
+</html>
