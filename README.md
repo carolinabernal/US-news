@@ -61,10 +61,12 @@ In general, our code contains the following elements:
 
     Given the information above, our queries had the following format:
     q='Hillary OR Clinton from:'+i+' since:2016-11-22 until:2016-11-23 filter:links -@'+i+'', count='100'
+    
+      - We searched the queries for the following words: Trump, Hillary Clinton, marihuana and Cuba/cubans/Fidel Castro, 
+      and we filtered the tweets containing a link to an article.
+      - We obtained those queries from November 22 to 27.
 
-    In our case, we are filtering the tweets that contain a link to an article of each newspaper.
-
-4. We downloaded the responses in JSON format and then generated a code to count the number of tweets (we excluded retweets) per newspaper and write it on a csv file. This code can be found in the repository under the name of "counter.py"
+4. We downloaded the responses in JSON format and then generated a code to count the number of tweets per newspaper (we excluded retweets) and write the output on a csv file. This code can be found in the repository under the name of "counter.py"
 
 
 #### Some challenges with the data
@@ -78,6 +80,13 @@ Those restrictions on the amount of information that can be retrieved at once le
 
   * Focus FOR NOW only on the tweets from the two (2) major newspapers of each state.
   * Not weighting the number of tweets by the size of the newspaper or by how active is the newspaper on twitter (to do this we would need the total number of tweets per newspaper).
+  
+##Creating our DataFrames
+Our code to count the number of tweets per newspaper writes the output in csv files. We use this information to generate a new csv file per topic with the number of tweets per state and per day, as well as the sum of the tweets over the past week. Thus, we generated four DataFrames: "Trump_tweets.csv", "Hillary_tweets.csv", "Marihuana_tweets.csv" and "Cuba_tweets.csv".
+
+Using Geopandas we merged each of the csv files mentioned above with the shapefile of U.S. states. We then plot the merged dataset to show how the number of tweets about each of the topics vary across U.S. states.
+
+We also added a second layer to our maps showing the cities of the states where the Republican party won in the past presidential election.
 
 ##Using Django
 
