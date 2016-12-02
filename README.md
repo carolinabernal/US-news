@@ -1,5 +1,6 @@
 # US-news
 Final project - Programming for Public Policy
+Carolina Bernal - Manuel Esquivel - Miriam Gonzalez
 
 # Our Question
 
