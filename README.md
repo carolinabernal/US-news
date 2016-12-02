@@ -89,7 +89,27 @@ Using Geopandas we merged each of the csv files mentioned above with the shapefi
 We also added a second layer to our maps showing the cities of the states where the Republican party won in the past presidential election. To do this we used the csv file "Locations.csv", which contains the latituted and longitude of the State Capitals in the United States. We obtained the information from http://www.arcgis.com/home/item.html?id=90977e1946e74416b6f7e304efed7bc7 and then we added a column with the results of the 2016 presidential elections.
 
 ##Using Django
-Once all the maps were generated, we used the app we created on Django to display the results. 
+Once all the maps were generated, we used Django to display the results on a website. 
 
-Our app is calles 'news
+Our site is contained within the folder called 'news' in our repository. Once you access the 'news' folder, you wll find the 'mysite' and 'myapp' folders. 
 
+Within the 'myapp' folder you will find the relevant files and folder that we generated to create our site: 
+    - url.py file
+    - views.py file
+    - templates folder with all the required .html files
+    
+Once you run the server (python manage.py runserver), you can access the site's homepage through http://localhost:8000/myapp/newshome/
+
+There you will see a beautiful description of our project and instrctions on how to navigate the rest of the website.
+The first thing you need to do is click on one of the topics contained on the navigation bar. As an example, if you pick "Hillary", you will be transported to another page that we called "Hillarytab" under views. So you will now be in http://localhost:8000/myapp/newshome/Hillarytab. 
+
+In this page you can: 
+    - select the day for which you would like to see the maps with the results
+    - see a map with the results of ALL the individual maps available for that particular topics
+For content and formatting, this page uses the "Hillarytab.html" script under the "templates" folder, which contains the content of the page. This same process is followed when you access all the other topics. 
+
+The scripts "Hillarytab.html", "Trumptab.html", "Cubatab.html", and "marihuanatab.html" all use the "yearstemp.html" template, which is a template that containes all the formatting for how we want those pages to look like.
+
+Once you click on a particular day within a particular topic, you will be transported to http://localhost:8000/myapp/newshome/Hillarytab/"DAY OF INTEREST". This url in turn directs you to a view called "picget." This view uses the last portion of the url (i.e., the date of interest) and inserts it into an address to complete the direction of where the map of interest lives. In this case, all maps of interest live in our repository. The map of interest is then opened on a new tab. 
+
+We hope you enjoy! Let us know if you would like to buy our code or pay a small consulting fee for us to run any other topics of interest.
