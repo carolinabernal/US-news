@@ -4,37 +4,34 @@ Carolina Bernal - Manuel Esquivel - Miriam Gonzalez
 
 # Our Question
 
-Have you ever thought how much your perception of a particular topic could change when you’re
+Have you ever thought about how much your perception of a particular topic could change when you’re
 exposed to more or less information on that topic?
 
-Our hypothesis is that differences in news’ coverage could explain some of the variation in how states behave regarding different topics.
+Our hypothesis is that differences in news coverage could explain some of the variation in how states behave regarding different topics.
 
-Based on tweets from the lasts days, this app shows in maps difference in coverage of different topic among the main newspapers per state.
-
+Based on tweets from the last days, our app displays maps of the U.S. showing the coverage of different topics by the main newspapers per state.     
 
 ##The Data Source
 
-For this project we use two main pieces of information:
+For this project we used two main pieces of information:
 
-1. Identify major local newspapers per state
-You can get information about local newspapers in the U.S. in the following websites:
+1. Identifying major local newspapers per state:
+Information about the top local newspapers in the U.S. can be found on the following websites:
 
 https://www.mediamiser.com/resources/top-media-outlets/top-10-arizona-daily-newspapers-by-circulation/
 http://www.cision.com/us/2010/05/top-10-daily-massachusetts-newspapers/
 
-  We choose two newspapers for each state in the United States--except Alaska, Hawaii and District of Columbia.
-  Then we search for the twitter accounts of those newspapers in their websites.
+  We chose two newspapers for each state in the United States--except Alaska, Hawaii and District of Columbia.
+  Then we searched for the twitter handles of the accounts of those newspapers. 
 
-  The complete list of the newspapers that we analyze in this project and their twitter accounts can be found on the file called "Twitter_accounts.csv".
-
-2.Tweets of local newspapers
-We used the [Twitter Search API](https://dev.twitter.com/rest/public/search) to get the tweets about specific topics on the days that we selected. This API is part of Twitter’s REST API, which allow us to read and write Twitter data in JSON format.
-
-NOTE: We decided to use the Twitter Search API instead of the Streaming API in order to be able to conduct specific searches.
+  The complete list of the newspapers that we analyzed in this project, their twitter handles, and corresponding States can be found on the file called "Twitter_accounts.csv".
+ 
+2. Obtaining Tweets of local newspapers:
+We used the [Twitter Search API](https://dev.twitter.com/rest/public/search) to get the tweets about specific topics on the days of interest. This API is part of Twitter’s REST API, which allows us to read and write Twitter data in JSON format. We decided to use the Twitter Search API instead of the Streaming API in order to be able to conduct specific searches.
 
 ### Obtaining the data from Twitter
 
-1. To access the Twitter API you need to obtain your Twitter API keys (API key, API secret, Access token, Access token secret). We did this following these steps:
+1. To access the Twitter API you need to obtain your Twitter API keys (API key, API secret, Access token, Access token secret). We did that following these steps:
     * Go to the [Twitter Development Site](https://dev.twitter.com/) and log in to your Twitter user account.
     * From the navigation bar choose <Myapps> then click on "Create New App"
     * Fill in your application details (name, description and website) and click "Create your Twitter application"
@@ -60,12 +57,14 @@ In general, our code contains the following elements:
     since/until  -   allow you define the window for which you are conducting the search
     filter       -   allows you to restrict the tweets that you get, based on a specific criteria
 
-    Given the information above, our queries had the following format:
+    Given the information above, the following is an example of the format:
     q='Hillary OR Clinton from:'+i+' since:2016-11-22 until:2016-11-23 filter:links -@'+i+'', count='100'
     
-      - We searched the queries for the following words: Trump, Hillary Clinton, marihuana and Cuba/cubans/Fidel Castro, 
-      and we filtered the tweets containing a link to an article.
+      - We searched the queries for the following words: Trump, Hillary Clinton, marihuana and Cuba/cubans/Fidel Castro
+      - We filtered the tweets containing a link to an article to make sure that we were only counting information that was actually published by the newspapers, and not counting information that only went out thruough the newspaper's twitter account or information that was re-tweeted by/from the newspaper. 
       - We obtained those queries from November 22 to 27.
+      - We learned that the right way to loop a list of accounts is using '+i+' instead of just 'i'. Tweet Tweet! (or pio pio in
+        Spanish)
 
 4. We downloaded the responses in JSON format and then generated a code to count the number of tweets per newspaper (we excluded retweets) and write the output on a csv file. This code can be found in the repository under the name of "counter.py"
 
@@ -75,19 +74,22 @@ The Twitter Search API has several restrictions on the information that you can 
 
 1. The Search API uses a sampling of Tweets published in the past 7 days, thus, we created a DataFrame using information only for the week of November 22 to 27.
 
-2. It allows for 15 requests per rate limit window, then it allows 15 requests per window per access token, and rate limits are divided into 15 minute intervals. Thus, we split the twitter accounts that we are analyzing in different lists to conduct the searches by intervals.
+2. It allows for 15 requests per rate limit window, then it allows 15 requests per window per access token, and rate limits are divided into 15 minute intervals. Thus, we had to split the twitter accounts that we were analyzing in different lists to conduct the searches by intervals.
 
 Those restrictions on the amount of information that can be retrieved at once led us to:
 
   * Focus FOR NOW only on the tweets from the two (2) major newspapers of each state.
-  * Not weighting the number of tweets by the size of the newspaper or by how active is the newspaper on twitter (to do this we would need the total number of tweets per newspaper).
+  * Not weighting the number of tweets by the size of the newspaper or by how active the newspaper is on twitter (to do this we would need the total number of tweets per newspaper).
   
 ##Creating our DataFrames
 Our code to count the number of tweets per newspaper writes the output in csv files. We use this information to generate a new csv file per topic with the number of tweets per state and per day, as well as the sum of the tweets over the past week. Thus, we generated four DataFrames: "Trump_tweets.csv", "Hillary_tweets.csv", "Marihuana_tweets.csv" and "Cuba_tweets.csv".
 
-Using Geopandas we merged each of the csv files mentioned above with the shapefile of U.S. states. We then plot the merged dataset to show how the number of tweets about each of the topics vary across U.S. states.
+Using Geopandas we merged each of the csv files mentioned above with the shapefile of U.S. states. We then plot the merged dataset to show how the number of tweets about each of the topics varies across U.S. states.
 
 We also added a second layer to our maps showing the cities of the states where the Republican party won in the past presidential election. To do this we used the csv file "Locations.csv", which contains the latituted and longitude of the State Capitals in the United States. We obtained the information from http://www.arcgis.com/home/item.html?id=90977e1946e74416b6f7e304efed7bc7 and then we added a column with the results of the 2016 presidential elections.
 
 ##Using Django
+Once all the maps were generated, we used the app we created on Django to display the results. 
+
+Our app is calles 'news
 
