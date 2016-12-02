@@ -46,7 +46,7 @@ NOTE: We decided to use the Twitter Search API instead of the Streaming API in o
     $ python setup.py build     
     $ python setup.py install
 
-3. We generated a code in python to extract the data from Twitter. The code is in the repository under the name "search_api.py".
+3. We generated a code in python to extract the data from Twitter. The code is in the repository under the name "search.py".
 In general, our code contains the following elements:
   * Since the response from the Twitter Search API is in JSON format we imported json.
   * To initiate connection to Twitter Search API we included the credentials that we obtained by creating our Twitter App (API key, API secret, Access token, Access token secret).
@@ -86,7 +86,7 @@ Our code to count the number of tweets per newspaper writes the output in csv fi
 
 Using Geopandas we merged each of the csv files mentioned above with the shapefile of U.S. states. We then plot the merged dataset to show how the number of tweets about each of the topics vary across U.S. states.
 
-We also added a second layer to our maps showing the cities of the states where the Republican party won in the past presidential election.
+We also added a second layer to our maps showing the cities of the states where the Republican party won in the past presidential election. To do this we used the csv file "Locations.csv", which contains the latituted and longitude of the State Capitals in the United States. We obtained the information from [arcgis](http://www.arcgis.com/home/item.html?id=90977e1946e74416b6f7e304efed7bc7) and then we added a column with the results of the 2016 presidential elections.
 
 ##Using Django
 
