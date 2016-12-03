@@ -43,8 +43,11 @@ We used the [Twitter Search API](https://dev.twitter.com/rest/public/search) to 
  Once you downloaded the Python Twitter Tools package, type the following commands in your terminal:
  
     $ python setup.py --help
+    
     $ python setup.py build
+    
     $ python setup.py install
+    
 
 3. We generated a code in python to extract the data from Twitter. The code is in the repository under the name "search.py".
 In general, our code contains the following elements:
