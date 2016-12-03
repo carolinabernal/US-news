@@ -40,7 +40,8 @@ We used the [Twitter Search API](https://dev.twitter.com/rest/public/search) to 
     * Make a note of your OAuth settings (keys) --you will need to copy them to download information.
 
 2. To connect to Twitter API and download the tweets you need to install a Twitter Library called [Python Twitter Tools](https://pypi.python.org/pypi/twitter)
-  Once you downloaded the Python Twitter Tools package, type the following commands in your terminal:
+ Once you downloaded the Python Twitter Tools package, type the following commands in your terminal:
+ 
     $ python setup.py --help
     $ python setup.py build     
     $ python setup.py install
