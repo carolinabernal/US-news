@@ -98,9 +98,9 @@ Within the 'myapp' folder you will find the relevant files and folder that we ge
     - views.py file
     - templates folder with all the required .html files
     
-Once you run the server (python manage.py runserver), you can access the site's homepage through http://localhost:8000/myapp/newshome/
+Once you run the server (python manage.py runserver), you can access the site's homepage through http://localhost:8000/myapp/newshome/. For the style and design of this template, we used the open source "Black and White Photo Template" from w3schools (http://www.w3schools.com/w3css/w3css_templates.asp). However, we did have to make plenty of modifications to the template. 
 
-There you will see a beautiful description of our project and instrctions on how to navigate the rest of the website.
+On the homepage you will see a beautiful description of our project and instrctions on how to navigate the rest of the website.
 The first thing you need to do is click on one of the topics contained on the navigation bar. As an example, if you pick "Hillary", you will be transported to another page that we called "Hillarytab" under views. So you will now be in http://localhost:8000/myapp/newshome/Hillarytab. 
 
 In this page you can: 
