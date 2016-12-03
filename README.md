@@ -53,12 +53,13 @@ In general, our code contains the following elements:
   NOTE: Given the privacy agreement that we accepted when we created our Twitter Apps, we can't share our credentials. For this reason, the code that is in the repository DOES NOT contain them and will not run unless you introduce your own keys (OAuth settings).
 
   * To conduct queries in the Twitter Search API you must consider the following elements:
-    q            -   defines the query
-    from         -   allows you to get the tweets from a specific user/twitter accounts
-    since/until  -   allow you define the window for which you are conducting the search
-    filter       -   allows you to restrict the tweets that you get, based on a specific criteria (e.g. tweets linking to URL) 
-    OR           -   allows you to find tweets containing either “the first term” or “second term” (or both)
-    -            -   allows you to exclude tweets that contain specific terms
+  
+    - "q"            -   defines the query
+    - "from"         -   allows you to get the tweets from a specific user/twitter accounts
+    - "since/until"  -   allow you define the window for which you are conducting the search
+    - "filter"       -   allows you to restrict the tweets that you get, based on a specific criteria (e.g. tweets linking to                          URL) 
+    - "OR"           -   allows you to find tweets containing either “the first term” or “second term” (or both)
+    - "-"            -   allows you to exclude tweets that contain specific terms
 
     Given the information above, the following is an example of the format:
     q='Hillary OR Clinton from:'+i+' since:2016-11-22 until:2016-11-23 filter:links -@'+i+'', count='100'
