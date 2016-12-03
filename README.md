@@ -48,7 +48,6 @@ We used the [Twitter Search API](https://dev.twitter.com/rest/public/search) to 
     
     $ python setup.py install
     
-
 3. We generated a code in python to extract the data from Twitter. The code is in the repository under the name "search.py".
 In general, our code contains the following elements:
   * Since the response from the Twitter Search API is in JSON format we imported json.
@@ -74,7 +73,7 @@ In general, our code contains the following elements:
       - We learned that the most convenient way to loop a list of accounts is using '+i+' instead of just 'i'. Tweet Tweet! (or pio pio in
         Spanish)
 
-4. We downloaded the responses in JSON format and then generated a code to count the number of tweets per newspaper (we excluded retweets) and write the output on a csv file. This code can be found in the repository under the name of "counter.py"
+4. We downloaded the responses in JSON format and then generated a code to count the number of tweets per newspaper (we excluded retweets) and write the output on a csv file. This code can be found in the repository under the name of "counter.py". All the json files with tweets per topic, per date and per newspaper are in the file "Json - zips" of this repository.   
 
 
 #### Some challenges with the data
