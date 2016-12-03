@@ -94,9 +94,9 @@ Once all the maps were generated, we used Django to display the results on a web
 Our site is contained within the folder called 'news' in our repository. Once you access the 'news' folder, you wll find the 'mysite' and 'myapp' folders. 
 
 Within the 'myapp' folder you will find the relevant files and folder that we generated to create our site: 
-    - url.py file
-    - views.py file
-    - templates folder with all the required .html files
+  * url.py file
+  * views.py file
+  * templates folder with all the required .html files
     
 Once you run the server (python manage.py runserver), you can access the site's homepage through http://localhost:8000/myapp/newshome/. For the style and design of this template, we used the open source "Black and White Photo Template" from w3schools (http://www.w3schools.com/w3css/w3css_templates.asp). However, we did have to make plenty of modifications to the template. 
 
@@ -104,8 +104,8 @@ On the homepage you will see a beautiful description of our project and instrcti
 The first thing you need to do is click on one of the topics contained on the navigation bar. As an example, if you pick "Hillary", you will be transported to another page that we called "Hillarytab" under views. So you will now be in http://localhost:8000/myapp/newshome/Hillarytab. 
 
 In this page you can: 
-    - select the day for which you would like to see the maps with the results
-    - see a map with the results of ALL the individual maps available for that particular topics
+  * select the day for which you would like to see the maps with the results
+  * see a map with the results of ALL the individual maps available for that particular topics
 For content and formatting, this page uses the "Hillarytab.html" script under the "templates" folder, which contains the content of the page. This same process is followed when you access all the other topics. 
 
 The scripts "Hillarytab.html", "Trumptab.html", "Cubatab.html", and "marihuanatab.html" all use the "yearstemp.html" template, which is a template that containes all the formatting for how we want those pages to look like.
